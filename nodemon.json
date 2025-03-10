@@ -1,0 +1,6 @@
+{
+  "ext": "js, json, handlebars",
+  "exec": "node ./index.js",
+  "watch": ["env", "src", "index.js"],
+  "ignore": ["test"]
+}
