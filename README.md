@@ -56,6 +56,7 @@ Para poder trabajar con el proyecto de manera local, es necesario configurar el 
 
    # database MYSQL
    NAME_DB_MYSQL=kallpa_db
+   MAIN_MYSQL_HOST=localhost
    MAIN_MYSQL_PORT=3306
    MAIN_MYSQL_USER=root
    MAIN_MYSQL_PASSWORD=password
