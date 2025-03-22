@@ -1,39 +1,29 @@
-/**
- * @description
- * Import models - Setting Section
- */
-// const Person = require('./setting/Person');
+// src/databases/models/index.js
 
-/**
- * @description
- * Import models - Clinic Section
- */
-// const March = require('./clinic/March');
+const User = require("./security/User");
+const Plan = require("./billing/Plan");
+const Subscription = require("./billing/Subscription");
+const Payment = require("./billing/Payment");
+const Role = require("./security/Role");
+const Post = require("./post/Post");
+const OptionPlan = require("./billing/OptionPlan");
 
-/**
- * @description
- * Import models - Security Section
- */
-const Role = require('./security/Role');
-const User = require('./security/User');
-
-/**
- * @description
- * Import associations
- */
-const Associations = require('./associations');
+const Associations = require("./associations");
 
 module.exports = ({ sequelize, DataTypes }) => {
-  // TODO: adding models - Setting
-//   Person({ sequelize, DataTypes });
+  // Exportar todos los modelos en un solo objeto
+  const models = {
+    User: User({ sequelize, DataTypes }),
+    Role: Role({ sequelize, DataTypes }),
+    Plan: Plan({ sequelize, DataTypes }),
+    Subscription: Subscription({ sequelize, DataTypes }),
+    Payment: Payment({ sequelize, DataTypes }),
+    Post: Post({ sequelize, DataTypes }),
+    OptionPlan: OptionPlan({ sequelize, DataTypes }),
+  };
 
-  // TODO: adding models - Clinic
-//   March({ sequelize, DataTypes });
+  // Aplica las asociaciones después de definir los modelos
+  Associations({ sequelize, DataTypes, models });
 
-  // TODO: adding models - Security
-  Role({ sequelize, DataTypes });
-  User({ sequelize, DataTypes });
-
-  // TODO: adding associations
-  Associations({ sequelize });
+  return models;
 };
