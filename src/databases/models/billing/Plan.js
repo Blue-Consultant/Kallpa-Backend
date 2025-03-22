@@ -8,10 +8,34 @@ module.exports = ({ sequelize, DataTypes }) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      status: {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      moneda: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      price: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      duration_days: {
         type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.TEXT,
         allowNull: true,
-        defaultValue: 1,
+      },
+      benefits: {
+        type: DataTypes.JSONB,
+        allowNull: true,
+      },
+      status: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "active",
       },
       created_at: {
         type: DataTypes.DATE,

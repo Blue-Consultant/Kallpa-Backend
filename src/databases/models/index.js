@@ -6,6 +6,7 @@ const Subscription = require("./billing/Subscription");
 const Payment = require("./billing/Payment");
 const Role = require("./security/Role");
 const Post = require("./post/Post");
+const OptionPlan = require("./billing/OptionPlan");
 
 const Associations = require("./associations");
 
@@ -18,6 +19,7 @@ module.exports = ({ sequelize, DataTypes }) => {
     Subscription: Subscription({ sequelize, DataTypes }),
     Payment: Payment({ sequelize, DataTypes }),
     Post: Post({ sequelize, DataTypes }),
+    OptionPlan: OptionPlan({ sequelize, DataTypes }),
   };
 
   // Aplica las asociaciones después de definir los modelos
