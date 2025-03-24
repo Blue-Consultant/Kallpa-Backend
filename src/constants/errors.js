@@ -16,6 +16,7 @@ const DONT_MATCH = Object.freeze({
 
 const DONT_EXISTS = Object.freeze({
   DONT_EXISTS_USER: 'DONT_EXISTS_USER',
+  DONT_EXISTS_POST: 'DONT_EXISTS_POST',
 });
 
 module.exports = {

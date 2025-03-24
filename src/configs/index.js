@@ -25,6 +25,9 @@ module.exports = Object.freeze({
     port: process.env.PORT,
     host: process.env.HOST,
   },
+  images: {
+    post: process.env.IMAGES_POST,
+  },
   logger: {
     info: process.env.LOG_INFO,
     error: process.env.LOG_ERROR,

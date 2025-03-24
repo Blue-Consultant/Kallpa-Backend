@@ -1,14 +1,15 @@
 /**
  * @description
- * Import models - Setting Section
+ * Import models - General Section
  */
-// const Person = require('./setting/Person');
+const Ubigeo = require('./general/Ubigeo');
 
 /**
  * @description
- * Import models - Clinic Section
+ * Import models - Post Section
  */
-// const March = require('./clinic/March');
+const Post = require('./post/Post');
+const PostImage = require('./post/PostImage');
 
 /**
  * @description
@@ -25,10 +26,11 @@ const Associations = require('./associations');
 
 module.exports = ({ sequelize, DataTypes }) => {
   // TODO: adding models - Setting
-//   Person({ sequelize, DataTypes });
+  Ubigeo({ sequelize, DataTypes });
 
-  // TODO: adding models - Clinic
-//   March({ sequelize, DataTypes });
+  // TODO: adding models - Post
+  Post({ sequelize, DataTypes });
+  PostImage({ sequelize, DataTypes });
 
   // TODO: adding models - Security
   Role({ sequelize, DataTypes });
