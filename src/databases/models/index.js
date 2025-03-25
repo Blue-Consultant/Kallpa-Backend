@@ -1,14 +1,26 @@
 // src/databases/models/index.js
 
-const User = require("./security/User");
-const Plan = require("./billing/Plan");
-const Subscription = require("./billing/Subscription");
-const Payment = require("./billing/Payment");
-const Role = require("./security/Role");
-const Post = require("./post/Post");
-const OptionPlan = require("./billing/OptionPlan");
+const User = require('./security/User');
+const Plan = require('./billing/Plan');
+const Subscription = require('./billing/Subscription');
+const Payment = require('./billing/Payment');
+const Role = require('./security/Role');
+const Post = require('./post/Post');
+const OptionPlan = require('./billing/OptionPlan');
+/**
+ * @description
+ * Import models - General Section
+ */
+const Ubigeo = require('./general/Ubigeo');
 
-const Associations = require("./associations");
+/**
+ * @description
+ * Import models - Post Section
+ */
+const Post = require('./post/Post');
+const PostImage = require('./post/PostImage');
+
+const Associations = require('./associations');
 
 module.exports = ({ sequelize, DataTypes }) => {
   // Exportar todos los modelos en un solo objeto
@@ -24,6 +36,12 @@ module.exports = ({ sequelize, DataTypes }) => {
 
   // Aplica las asociaciones después de definir los modelos
   Associations({ sequelize, DataTypes, models });
+  // TODO: adding models - Setting
+  Ubigeo({ sequelize, DataTypes });
+
+  // TODO: adding models - Post
+  Post({ sequelize, DataTypes });
+  PostImage({ sequelize, DataTypes });
 
   return models;
 };
