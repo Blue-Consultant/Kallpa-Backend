@@ -5,7 +5,7 @@ const Plan = require('./billing/Plan');
 const Subscription = require('./billing/Subscription');
 const Payment = require('./billing/Payment');
 const Role = require('./security/Role');
-const Post = require('./post/Post');
+// const Post = require('./post/Post');
 const OptionPlan = require('./billing/OptionPlan');
 /**
  * @description
